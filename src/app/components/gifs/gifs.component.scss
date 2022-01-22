@@ -1,0 +1,64 @@
+@import 'src/styles.scss';
+
+.gifs-container {
+  //position: relative;
+  margin: auto;
+  background: white;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 15px 2px rgba(#71767c, 0.308);
+  box-sizing: border-box;
+  width: 70%;
+}
+
+.giphies {
+  display: flex;
+  cursor: pointer;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  width: 2.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-scrollbar;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-lightBlue;
+}
+
+.btn {
+  margin-left: 16px;
+  height: 40px;
+  border-radius: 0px;
+  background-color: $blue-button;
+  color: white;
+}
+
+input[type=text] {
+  flex:1;
+  padding: 15px 50px 15px 30px;
+  box-sizing: border-box;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: $color-lightBlue;
+  background-color: white;
+}
+
+.gifs-operations {
+  padding-bottom: 20px;
+}

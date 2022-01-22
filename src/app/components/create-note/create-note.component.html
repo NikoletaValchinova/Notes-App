@@ -1,0 +1,87 @@
+<div class="content-container">
+  <div class="crt-btn">
+    <button class="create-btn" type="button" (click)="onCreateNote()" [hidden]="!editMode">New Note</button>
+  </div>
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit(noteForm)" [formGroup]="noteForm">
+      <div class="title-input">
+        <label for="title"></label>
+        <input type="text" id="title" name="title" placeholder="Title" formControlName="title">
+      </div>
+
+      <div class="content-input-note" *ngIf="type === 'note'">
+        <label for="content"></label>
+        <textarea formControlName="content" class="textarea" type="text" name="content" id="content"
+                  placeholder="Type something here..."></textarea>
+      </div>
+
+      <div class="content-input-list" *ngIf="type === 'list'">
+        <ul class="checkboxes">
+          <li *ngFor="let obj of checkboxes; index as i">
+            <mat-checkbox type="checkbox" [checked]="obj.isChecked" style="--color: #7da4ce"
+                          (change)="updateCheckboxes($event, obj)">
+            </mat-checkbox>
+            <label class="input-sizer stacked">
+                  <textarea
+                    type="text"
+                    name="content"
+                    id="content"
+                    [class.checked]="obj.isChecked"
+                    (change)="checkboxes[i].label = $event.target.value"
+                    appTextareaResize
+                  >{{obj.label.trim()}}</textarea>
+            </label>
+            <a class="x-button" (click)="removeCheckbox(obj)"><span aria-hidden="true">&times;</span></a>
+          </li>
+        </ul>
+        <span>
+              <mat-checkbox type="checkbox" [disabled]="true"> </mat-checkbox>
+              <label class="input-sizer stacked">
+                <textarea formControlName="content"
+                          type="text"
+                          name="content"
+                          id="content"
+                          appTextareaResize
+                          rows="1"
+                          (keyup.enter)="addCheckbox()">
+             </textarea>
+            </label>
+          </span>
+      </div>
+      <div *ngIf="selectedGif">
+        <img src="{{selectedGif.images.fixed_height_small.url}}">
+        <a class="gif-x-button" (click)="onDeleteGif()"><span>&times;</span></a>
+      </div>
+
+      <div class="tags-container">
+        <ul class="tags">
+          <li class="tag-label" [style.color]="tag.color" *ngFor="let tag of checkedTags">
+            #{{tag.name}}
+          </li>
+        </ul>
+      </div>
+      <!--      <div class="giphy-container">-->
+      <!--        <label for="title"></label>-->
+      <!--        <input type="text" id="giphySearch" name="giphySearch" placeholder="Giphy" #searchTerm>-->
+      <!--        <button class="btn" type="button" (click)="searchGif(searchTerm)">Search</button>-->
+      <!--        <button class="btn" type="button" (click)="clearGifs(searchTerm)">Clear Gifs</button>-->
+      <!--        <div *ngIf="fetchedGifs.length" class="giphies">-->
+      <!--          <div *ngFor="let gif of fetchedGifs">-->
+      <!--            <img src="{{gif.images.fixed_height_small.url}}" (click)="addGif(gif)">-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <div class="details">
+        <p id="date" *ngIf="editMode">{{ getDate() }}</p>
+        <div class="buttons">
+          <button class="btn" type="button" (click)="updateTags()">Options</button>
+          <button class="btn" type="submit"
+                  [disabled]="!noteForm.value.title && (checkboxes.length===0 && !noteForm.value.content)">Save
+          </button>
+          <button class="btn" type="button" (click)="openConfirmationDialog()"
+                  [disabled]="!noteForm.value.title && (checkboxes.length===0 && !noteForm.value.content)">{{ editMode ? 'Delete' : 'Clear' }} </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

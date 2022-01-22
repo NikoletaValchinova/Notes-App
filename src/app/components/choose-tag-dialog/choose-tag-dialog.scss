@@ -1,0 +1,109 @@
+@import "src/styles.scss";
+
+#tags {
+  flex:2;
+  max-height: 187px;
+  padding: 10px;
+  margin: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: $color-dark-scrollbar  $color-scrollbar;
+  scrollbar-width: thin;
+  height: auto;
+}
+
+::ng-deep .mat-dialog-container {
+  padding: 32px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+::ng-deep .mat-dialog-actions {
+  box-sizing: border-box;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 10px;
+}
+
+.btn {
+  height: 40px;
+  border-radius: 0px;
+  background-color: $blue-button;
+  color: $color-light;
+}
+
+.mat-dialog-title {
+  padding: 10px;
+}
+
+.mat-input-element { 
+  margin: 20px;
+  width: 90%;
+  border-bottom: solid $color-darkBlue 1px;
+}
+
+.mat-input-element::placeholder { 
+  font-family: 'Bosch Sans Bold';
+  color: $color-lightBlue;
+}
+
+.x-button {
+  float: right;
+  text-decoration: none;
+  color: $color-darkBlue; 
+  cursor: pointer;
+  color: white;
+} 
+
+li:hover {
+  cursor: pointer;
+  a {
+      color: $color-darkBlue;
+  }    
+  color: $color-darkBlue;
+}  
+
+.x-button span {
+  font-size: 25px;
+  padding: 5px;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: var(--color) !important;
+}
+
+.priority {
+  display: flex;
+}
+
+mat-form-field {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+p {
+  margin:10px;
+}
+
+::ng-deep .mat-slide-toggle-content {
+  overflow: visible !important;
+  color: $color-lightBlue;
+}
+
+mat-slide-toggle {
+  padding-left: 20px;
+}
+
+.note-type {
+  display: inline-flex;
+  margin-left:20px;
+  width:250px;
+}
+
+.mat-button-toggle {
+  flex:50%;
+}

@@ -1,0 +1,24 @@
+@import "src/styles.scss";
+
+::ng-deep .mat-dialog-container {
+    padding: 32px;
+    background-color: white;
+}
+::ng-deep .mat-dialog-actions {
+    box-sizing: border-box;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.note-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+    
+.btn {
+    margin-left: 16px !important;
+    height: 40px;
+    border-radius: 0px;
+    background-color: $blue-button;
+    color: white;
+}

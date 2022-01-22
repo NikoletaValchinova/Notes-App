@@ -1,0 +1,127 @@
+@import 'src/styles.scss';
+
+.search-container {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    width:97%;
+    display:flex; 
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    
+}
+
+.reset, .create-folder {
+  width:50%;
+  display:flex; 
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 0;
+  font-family: 'Bosch Sans Medium';
+  padding: 10px 24px 10px 24px;
+  font-size: 15px;
+  justify-content: center;
+} 
+     
+.search-input {
+    flex: 1;
+    border: 0;
+    padding: 0.5rem 0.5rem 0.5rem 4rem;
+    height: 40px;
+    font-family: 'Bosch Sans Medium';
+}
+
+.search-icon {
+  position:absolute;
+  top:8px;
+  left: 8px;
+  margin: auto;
+}
+
+.date-field {
+  width:50%;
+}
+
+#label, #fromDate, #toDate, .icon {
+  color: white;
+  font-family: 'Bosch Sans Medium';
+}
+
+.icon {
+  margin-right: -7px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.choose-tag-header {
+  font-family: 'Bosch Sans Medium';
+}
+
+mat-expansion-panel {
+  width: 97%;
+  margin: auto;
+  border-radius: 0px;
+}
+
+.date-fields {
+  height: 70px;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background{
+  background-color: var(--color) !important;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px;
+}
+
+.radio-button {
+  margin: 10px;
+  color: white;
+}
+
+.create-folder {
+  margin-top: 20px;
+}
+
+.menu[_ngcontent-jit-c295] {
+  /* height: 80%; */
+  height: 90%;
+  overflow: hidden;
+}
+
+::ng-deep .mat-radio-button-checked .mat-checkbox-background{
+  background-color: var(--color) !important;
+}
+
+.mat-radio-outer-circle {
+  color: white; 
+}
+
+::ng-deep .mat-radio-outer-circle
+{
+  border-color: white !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle, 
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), 
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, 
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: white !important;
+}
+
+.menu {
+  height: 90%;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-color:  #b2b9c0  $color-scrollbar;
+  scrollbar-width: thin;
+}

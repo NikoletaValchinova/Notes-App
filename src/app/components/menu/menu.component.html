@@ -1,0 +1,80 @@
+  <div class="menu">
+
+    <div class="search-container">
+      <i class="material-icons search-icon">search</i>
+      <input [(ngModel)]="searchString" class="search-input" (keyup)="searchByString($event.target.value)" placeholder="Search...">
+
+    </div>
+    <div class="date-fields">
+      <mat-form-field class="date-field" appearance="fill">
+        <mat-label id="label">From</mat-label>
+        <input [(ngModel)]="fromDate" matInput id="fromDate" [matDatepicker]="fromPicker" (dateInput)="searchByDate()">
+        <mat-datepicker-toggle class="icon" matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+        <mat-datepicker #fromPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="date-field" appearance="fill">
+        <mat-label id="label">To</mat-label>
+        <input [(ngModel)]="toDate" matInput id="toDate" [matDatepicker]="toPicker" (dateInput)="searchByDate()">
+        <mat-datepicker-toggle class="icon" matSuffix [for]="toPicker"></mat-datepicker-toggle>
+        <mat-datepicker #toPicker></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+  <mat-expansion-panel #panel (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title class="choose-tag-header">
+      Choose tag...
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div>
+    <ul>
+      <li *ngFor="let tag of tags">
+        <mat-checkbox class="tag-label"  style="--color: {{tag.color}};"  #checkboxes [style.color]="tag.color" type="checkbox" (change)="updateTags($event, tag)">
+          {{tag.name.slice(0,25)}}{{tag.name.length > 25 ? '...' : ''}}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </div>
+</mat-expansion-panel>
+
+<mat-radio-group
+aria-labelledby="radio-group-label"
+class="radio-group"
+(change)="searchByType()"
+[(ngModel)]="type">
+<mat-radio-button class="radio-button" value="all">
+  All
+</mat-radio-button>
+<mat-radio-button class="radio-button" value="note">
+  Notes
+</mat-radio-button>
+<mat-radio-button class="radio-button" value="list">
+  Lists
+</mat-radio-button>
+</mat-radio-group>
+<button class="reset" mat-raised-button (click)="resetFields()">Clear Filters</button>
+
+<mat-expansion-panel #panel (opened)="panelOpenState = true"
+(closed)="panelOpenState = false">
+<mat-expansion-panel-header>
+  <mat-panel-title class="choose-tag-header">
+    My Folders
+  </mat-panel-title>
+</mat-expansion-panel-header>
+<div>
+  <ul>
+    <li *ngFor="let folder of folders">
+      <mat-checkbox class="tag-label" #folders>
+        {{folder.title}}
+      </mat-checkbox>
+    </li>
+  </ul>
+</div>
+</mat-expansion-panel>
+</div>
+
+<button class="create-folder" mat-raised-button (click)="createFolder()">Create Folder</button>
+
+

@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+$color-darkBlue: #113b6b;
+$color-lightBlue: #1a508b;
+$color-light: #fff3e6;
+$color-purple: #c1a1d3;
+$color-grey:  rgb(243, 240, 240);
+
+$color-background: #eff1f2;
+$red: #ea0016;
+$dark-red: #920002;
+$purple: #9e2896;
+$blue: #007bc0;
+$turquoise: #18837e;
+$green: #00884a;
+$light-green: #72ca92;
+$blue-button: #007bc0;
+$dark-grey: #2e3033;
+$color-scrollbar: #e0e2e5;
+$color-dark-scrollbar: #b2b9c0; 
+
+ html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+}
+
+h1, h2 {
+    color: $color-lightBlue;
+    font-family: 'Bosch Sans Bold';
+}
+
+p {
+    color: $color-lightBlue;
+    font-family: 'Bosch Sans Regular';
+}
+
+.tag-label {
+    font-family: 'Bosch Sans Black';
+}

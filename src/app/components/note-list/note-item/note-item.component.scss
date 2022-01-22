@@ -1,0 +1,109 @@
+@import 'src/styles.scss';
+
+.note-item-container {
+    position: relative;
+    margin: auto;
+    background: white;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 15px 2px rgba(#71767c, 0.308);
+}
+
+.note-item-container a {
+    text-decoration: none;
+    color: $color-darkBlue;
+}
+
+.not-confirm-dialog:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 2px rgba(#71767c, 0.378);
+    transition: box-shadow 0.1s ease-out; 
+} 
+
+.high-priority { 
+    border: 2px solid rgb(224, 97, 97);
+}
+
+.high-priority:hover { 
+    cursor: pointer;
+    border: 2px solid red;
+    box-shadow: 0px 0px 0px 0px rgba(red, 0.478);
+    background-color: rgb(253, 246, 246);
+    transition: box-shadow 0.1s ease-out; 
+}
+
+.selected.not-confirm-dialog{
+    background-color: #eee;
+    box-shadow: 0px 0px 0px 2px rgba(#71767c, 0.378);
+}
+
+.selected {
+    background-color: #eee;
+}
+
+.note-item {
+    padding: 5px;
+    overflow:hidden;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.note-item-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 5px 0px 0px 5px;
+}
+    
+.note-item-content {
+    position: relative;
+    padding-left: 5px;
+    font-size: 15px;
+    max-height: 23px;
+    overflow: hidden;
+}
+
+.note-item-date {
+    position: relative;
+    text-align: end;
+    margin-bottom: 5px;
+    margin-right: 15px;
+    margin-top: -25px;
+}
+
+.note-item-date p {
+    margin-bottom: 0px;
+}
+
+.x-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    text-align: right;    
+}
+
+.x-button span {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.note-item-tags {
+    margin-top: 15px;
+    padding-left: 5px;
+}
+
+ul li{
+    list-style-type: none;
+    display: inline;
+    padding-right: 3px;
+    font-weight: bold;
+    font-family: 'Bosch Sans Black';
+}
+
+ul {
+    padding-left: 0px;
+    margin-top: 0px 0px 0px;
+    margin-bottom: 0px;
+}

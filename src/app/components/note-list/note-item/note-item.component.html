@@ -1,0 +1,25 @@
+  <div class="note-item-container" 
+        [class.high-priority]="note.priority === 'high' && !confirmDialog" 
+        [class.not-confirm-dialog]="note.priority !== 'high' && !confirmDialog"
+        [class.selected] = "selected && !confirmDialog">
+  <a>
+    <div class="note-item">
+      <h1 class="note-item-title">{{ note.title }}</h1>
+      <div class="note-item-content">
+        <p>{{ getContent() }}</p>
+      </div>
+      <div class="note-item-tags">
+        <ul>
+          <li [style.color]="tag.color" *ngFor="let tag of note.tags.slice(0,10)">
+            {{ tag.name[0] }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="note-item-date">
+      <p>{{ getDate() }}</p>
+    </div>
+  </a>
+  <a class="x-button" (click)="openConfirmationDialog()" *ngIf="!confirmDialog"><span aria-hidden="true">&times;</span></a>
+</div>
+

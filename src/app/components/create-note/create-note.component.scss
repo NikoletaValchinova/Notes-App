@@ -1,0 +1,298 @@
+@import 'src/styles.scss';
+
+.content-container {
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.crt-btn {
+    flex:1;
+    align-self: flex-end;
+    margin-right: 15%;
+    margin-top: 15px;
+}
+
+.create-btn {
+    border-radius: 7px;
+    width: 90px;
+    height: 50px;
+    background-color: $blue-button;
+    color: $color-light;
+    border: 1px solid $color-light;
+    border-radius: 0px;
+}
+
+.form-container {
+    flex:12;
+    width: 70%;
+    margin:auto;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    overflow: hidden;
+    background: white;
+    padding: 5px;
+    box-shadow: 0px 2px 15px 2px rgba(black, 0.068);
+    align-self:flex-end;
+}
+
+.title-input {
+    flex:3;
+    display: flex;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+input[type=text], .textarea[type=text] {
+    flex:1;
+    padding: 15px 50px 15px 30px;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: $color-lightBlue;
+    background-color: white;
+}
+
+.content-input-note, .content-input-list {
+    display: flex;
+    flex-direction: column;
+    flex: 23;
+    font-size: 16px;
+    max-height: 600px;
+}
+
+.textarea[type=text], .content-input-list {
+    border: none;
+    padding: 20px 35px 20px 35px;
+    padding-bottom:20px;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: $color-dark-scrollbar $color-scrollbar;
+    scrollbar-width: thin;
+    margin-top: 10px;
+}
+
+:host::ng-deep.mat-checkbox-layout{
+    white-space: normal !important;
+}
+
+:host::ng-deep.mat-checkbox-layout .mat-checkbox-label {
+    padding: 0 0 7px 7px !important;
+}
+
+span {
+    height: auto;
+    overflow: visible;
+    padding-left: 0px;
+}
+
+:host::ng-deep.mat-checkbox-inner-container {
+    margin-top: 2px !important;
+}
+
+.details {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.buttons {
+    display: flex;
+    justify-self: flex-end;
+    margin-right: 32px;
+    margin-bottom: 32px;
+}
+
+.btn {
+    margin-left: 16px;
+    height: 40px;
+    border-radius: 0px;
+    background-color: $blue-button;
+    color: white;
+}
+
+#date {
+    flex: 2;
+    align-self: end;
+    margin-left: 32px;
+    margin-bottom: 32px;
+    color: $color-lightBlue;
+}
+
+.tags-container {
+    flex:2;
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom:5px;
+    margin-bottom:10px;
+    scrollbar-color: $color-dark-scrollbar  $color-scrollbar;
+    scrollbar-width: thin;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 21px;
+}
+
+.tag-list {
+    width: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+.mat-icon {
+    display: none;
+}
+
+mat-chip {
+    min-height: 25px;
+    padding-left: 12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: white;
+}
+
+.tags li{
+    list-style-type: none;
+    display: inline;
+    padding: 5px;
+}
+
+.tags {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.x-button {
+    float: right;
+    text-decoration: none;
+    color: $color-darkBlue;
+    cursor: pointer;
+    color: white;
+}
+
+.gif-x-button {
+  position: absolute;
+  text-decoration: none;
+  color: $color-darkBlue;
+  cursor: pointer;
+}
+
+.checkboxes li:hover {
+    cursor: pointer;
+    a {
+        color: $color-darkBlue;
+    }
+    color: $color-darkBlue;
+}
+
+.x-button span {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.checkboxes {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.checkboxes li {
+    margin-bottom: 5px;
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+    line-height: 22px;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background-color: var(--color) !important;
+}
+
+.input-sizer {
+   display: inline-grid;
+   vertical-align: top;
+   align-items: center;
+   position: relative;
+   max-width: 85% !important;
+
+   &.stacked {
+        align-items: stretch;
+        width: 100%;
+        &::after,
+        textarea {
+            grid-area: 2 / 1;
+            color: $color-darkBlue;
+        }
+    }
+
+&::after,
+textarea {
+    width: 100%;
+    min-width: 1em;
+    grid-area: 1 / 2;
+    font: inherit;
+    margin: 0;
+    resize: none;
+    border: none;
+    height: auto;
+    line-height: 22px;
+  }
+
+  &::after {
+    content: attr(data-value);
+    white-space: pre-wrap;
+    visibility: hidden;
+  }
+}
+
+.checked {
+    color: #abbed2  !important;
+}
+
+//.giphy-container {
+//  margin-bottom: 10px;
+//  margin-top: 10px;
+//}
+//
+//.giphies {
+//  display: flex;
+//  cursor: pointer;
+//  overflow-x: scroll;
+//  white-space: nowrap;
+//}
+//
+//::-webkit-scrollbar {
+//  width: 2.5px;
+//}
+//
+///* Track */
+//::-webkit-scrollbar-track {
+//  box-shadow: inset 0 0 5px grey;
+//  border-radius: 10px;
+//}
+//
+///* Handle */
+//::-webkit-scrollbar-thumb {
+//  background: $color-scrollbar;
+//  border-radius: 8px;
+//}
+//
+///* Handle on hover */
+//::-webkit-scrollbar-thumb:hover {
+//  background: $color-lightBlue;
+//}

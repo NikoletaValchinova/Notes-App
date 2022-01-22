@@ -1,0 +1,13 @@
+<div class="gifs-container">
+<!--  <label for="title"></label>-->
+  <div class="gifs-operations">
+    <input type="text" id="giphySearch" name="giphySearch" placeholder="Giphy" #searchTerm>
+    <button class="btn" type="button" (click)="searchGif(searchTerm)">Search</button>
+    <button class="btn" type="button" (click)="clearGifs(searchTerm)">Clear Gifs</button>
+  </div>
+  <div *ngIf="fetchedGifs.length" class="giphies">
+    <div *ngFor="let gif of fetchedGifs">
+      <img src="{{gif.images.fixed_height_small.url}}" (click)="addGif(gif)">
+    </div>
+  </div>
+</div>

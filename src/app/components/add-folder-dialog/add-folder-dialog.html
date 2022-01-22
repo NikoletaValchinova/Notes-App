@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Add Folder</h1>
+<label for="folderName"></label>
+<input id="folderName" matInput [(ngModel)]="folderName" (keyup.enter)="addFolder()" placeholder="Folder Name...">
+
+<div mat-dialog-actions align="end">
+  <button class="btn" mat-button [mat-dialog-close]="onDone()" cdkFocusInitial>Done</button>
+</div>
